@@ -1,0 +1,9 @@
+<zk>
+	<window title="Main Window" viewModel="@id('vm') @init('zk.springboot.viewmodel.MainViewModel')">
+		<div>
+			<button label="sub page 1" onClick="@command('navigate', page='page1')"/>
+			<button label="sub page 2" onClick="@command('navigate', page='page2')"/>
+		</div>
+		<apply templateURI="@load(vm.currentPage.uri)" pageModel="@load(vm.currentPage)"/>
+	</window>
+</zk>

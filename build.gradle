@@ -1,0 +1,54 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'org.springframework.boot'
+
+jar {
+	baseName = rootProject.name
+	version =  '0.1.0'
+}
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+//	maven {
+//	credentials {
+//		username mavenUser
+//		password mavenPassword
+//	}
+////    	url "https://maven.zkoss.org/repo/zk/pe" //ZK-PE repo requires login
+//		url "https://maven.zkoss.org/repo/zk/ee" //ZK-EE repo requires login
+//	}
+	maven { url "http://mavensync.zkoss.org/maven2" }
+	maven { url "http://mavensync.zkoss.org/eval" }
+	mavenCentral()
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+	compile "org.springframework.boot:spring-boot-starter-web"
+
+	compile ("org.zkoss.zk:zkmax:${zkVersion}") { /*ZK EE*/
+		exclude module: "slf4j-jdk14"
+	}
+	compile "org.zkoss.zk:zuti:${zkVersion}"    /*optional enable for shadow elements support */
+//	compile "org.zkoss.zk:zhtml:${zkVersion}"   /*optional enable for xhtml component support */
+//	compile "org.zkoss.zk:zkplus:${zkVersion}"  /*optional enable for 3rd party framework integration support */
+
+	compile "commons-io:commons-io:${commonsIoVersion}"
+
+	//comment out the below for embedded tomcat
+	compile("org.springframework.boot:spring-boot-starter-web") {
+		exclude module: "spring-boot-starter-tomcat"
+	}
+	compile("org.springframework.boot:spring-boot-starter-jetty")
+
+}
