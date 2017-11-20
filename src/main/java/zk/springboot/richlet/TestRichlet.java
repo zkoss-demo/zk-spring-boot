@@ -1,17 +1,17 @@
-package zk.springboot;
+package zk.springboot.richlet;
 
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.GenericRichlet;
 import org.zkoss.zk.ui.Page;
 import org.zkoss.zk.ui.Richlet;
 import org.zkoss.zul.Label;
+import org.zkoss.zul.Window;
 
 public class TestRichlet extends GenericRichlet {
 
 	@Override
 	public void service(Page page) throws Exception {
-		//locate the zul from src/main/resources/web/zul/*.zul
-		String pageName = Executions.getCurrent().getParameter("p");
-		Executions.createComponents("~./zul/" + pageName + ".zul", page, null, null);
+		Window window = new Window("ZK-Spring-Boot Richlet", "normal", true);
+		window.setPage(page);
 	}
 }

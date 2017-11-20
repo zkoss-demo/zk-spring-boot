@@ -11,9 +11,10 @@ import javax.websocket.server.ServerContainer;
 import javax.websocket.server.ServerEndpointConfig;
 import java.util.EnumSet;
 
+/**
+ * obsolete after ZK-3799 is implemented (8.5.1 ?)
+ */
 public class SpringBootWebSocketWebAppInit implements WebAppInit {
-	public SpringBootWebSocketWebAppInit() {
-	}
 
 	public void init(WebApp wapp) throws Exception {
 		String url = getWebSocketUrl();

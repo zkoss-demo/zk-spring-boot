@@ -32,5 +32,5 @@
 	<div>
 		<image src="~./img/zklogo3.png" width="100px"/>
 	</div>
-
+	<button label="upload" upload="true" onUpload='Clients.showNotification("Uploaded: " + event.getMedia().getName());'/>
 </zk>

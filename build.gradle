@@ -45,10 +45,9 @@ dependencies {
 
 	compile "commons-io:commons-io:${commonsIoVersion}"
 
-	//comment out the below for embedded tomcat
+//	comment out the below for embedded tomcat
 	compile("org.springframework.boot:spring-boot-starter-web") {
 		exclude module: "spring-boot-starter-tomcat"
 	}
 	compile("org.springframework.boot:spring-boot-starter-jetty")
-
 }
