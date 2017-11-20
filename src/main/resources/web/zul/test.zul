@@ -7,8 +7,9 @@
 
 	default ZK styled elements
 	<div>
-		<textbox/>
-		<button label="test button" onClick=""/>
+		<textbox onChange='Clients.showNotification("Changed");'/>
+		<button label="test button" onClick='Clients.showNotification("Clicked");'/>
+		<button label="upload" upload="true" onUpload='Clients.showNotification("Uploaded: " + event.getMedia().getName());'/>
 	</div>
 
 	custom styles from global and local stylesheets (loaded from /resources/static folder)
@@ -32,5 +33,4 @@
 	<div>
 		<image src="~./img/zklogo3.png" width="100px"/>
 	</div>
-	<button label="upload" upload="true" onUpload='Clients.showNotification("Uploaded: " + event.getMedia().getName());'/>
 </zk>
