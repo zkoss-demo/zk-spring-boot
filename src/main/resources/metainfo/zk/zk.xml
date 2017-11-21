@@ -2,7 +2,7 @@
 <zk>
 	<config-name>zk-spring-boot</config-name>
 	<client-config>
-	<debug-js>true</debug-js>
+		<debug-js>true</debug-js>
 	</client-config>
 
 	<!--<library-property>-->

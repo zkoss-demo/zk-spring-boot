@@ -34,7 +34,12 @@ targetCompatibility = '1.8'
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
-	compile "org.springframework.boot:spring-boot-starter-web"
+	compile("org.springframework.boot:spring-boot-starter-web") {
+		exclude module: "spring-boot-starter-tomcat"
+	}
+	compile("org.springframework.boot:spring-boot-starter-jetty")
+//	compile("org.springframework.boot:spring-boot-starter-tomcat")
+
 
 	compile ("org.zkoss.zk:zkmax:${zkVersion}") { /*ZK EE*/
 		exclude module: "slf4j-jdk14"
@@ -44,10 +49,4 @@ dependencies {
 //	compile "org.zkoss.zk:zkplus:${zkVersion}"  /*optional enable for 3rd party framework integration support */
 
 	compile "commons-io:commons-io:${commonsIoVersion}"
-
-//	comment out the below for embedded tomcat
-	compile("org.springframework.boot:spring-boot-starter-web") {
-		exclude module: "spring-boot-starter-tomcat"
-	}
-	compile("org.springframework.boot:spring-boot-starter-jetty")
 }
