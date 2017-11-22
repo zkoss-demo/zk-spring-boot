@@ -15,6 +15,9 @@ run jar
 ./java -jar ./build/libs/zk-spring-boot-0.1.0.jar
 
 ```
-http://localhost:8080/zk/test?p=test
-http://localhost:8080/zk/test?p=mvvm
+http://localhost:8080/mvvm.zul
+
+http://localhost:8080/resources.zul
+
+http://localhost:8080/richlet/test
 
