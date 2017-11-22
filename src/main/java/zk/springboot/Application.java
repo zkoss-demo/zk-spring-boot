@@ -7,8 +7,8 @@ import zk.springboot.config.ZKCEConfig;
 import zk.springboot.config.ZKEEConfig;
 
 @SpringBootApplication
-//@Import(ZKCEConfig.class)
-@Import(ZKEEConfig.class)
+//@Import(ZKCEConfig.class) /*ZK CE config only*/
+@Import(ZKEEConfig.class) /*ZK EE config includes CE*/
 public class Application  {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
