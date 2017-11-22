@@ -48,7 +48,7 @@ dependencies {
 	compile "org.zkoss.zk:zkmax:${zkVersion}", withoutSlf4J /*ZK EE*/
 	compile "org.zkoss.zk:zuti:${zkVersion}", withoutSlf4J /*optional enable for shadow elements support ZK EE*/
 	compile "org.zkoss.zk:zkplus:${zkVersion}", withoutSlf4J /*optional enable for 3rd party framework integration support */
-	compile "org.zkoss.zk:zhtml:${zkVersion}", withoutSlf4J /*optional enable for xhtml component support */
+//	compile "org.zkoss.zk:zhtml:${zkVersion}", withoutSlf4J /*optional enable for xhtml component support */
 
 	compile "commons-io:commons-io:${commonsIoVersion}"
 }
