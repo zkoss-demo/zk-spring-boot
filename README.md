@@ -11,7 +11,7 @@ run build self executable jar (in ./build/libs)
 ```
 run jar 
 ```
-./java -jar ./build/libs/zk-spring-boot-0.1.0.jar
+java -jar ./build/libs/zk-spring-boot-0.1.0.jar
 ```
 http://localhost:8080/mvvm.zul (small MVVM example showing subnavigation and spring service integration)
 
