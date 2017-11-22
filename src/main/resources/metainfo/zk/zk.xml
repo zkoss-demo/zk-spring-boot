@@ -40,6 +40,6 @@
 	<!--enable websocket support in ZK 8.5  -->
 	<listener>
 		<!--<listener-class>org.zkoss.zkmax.au.websocket.WebSocketWebAppInit</listener-class>-->
-		<listener-class>zk.springboot.SpringBootWebSocketWebAppInit</listener-class>
+		<listener-class>zk.springboot.config.SpringBootWebSocketWebAppInit</listener-class>
 	</listener>
 </zk>

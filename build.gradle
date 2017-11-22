@@ -17,7 +17,7 @@ jar {
 // In this section you declare where to find the dependencies of your project
 repositories {
 //	maven {
-//	credentials {
+//	credentials { /*e.g. defined in ~/.gradle/gradle.properties*/
 //		username mavenUser
 //		password mavenPassword
 //	}
@@ -34,19 +34,21 @@ targetCompatibility = '1.8'
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
-	compile("org.springframework.boot:spring-boot-starter-web") {
+
+	compile ("org.springframework.boot:spring-boot-starter-web") {
 		exclude module: "spring-boot-starter-tomcat"
 	}
-	compile("org.springframework.boot:spring-boot-starter-jetty")
-//	compile("org.springframework.boot:spring-boot-starter-tomcat")
+//	choose either embedded tomcat or jetty
+	compile "org.springframework.boot:spring-boot-starter-jetty"
+//	compile "org.springframework.boot:spring-boot-starter-tomcat"
 
-
-	compile ("org.zkoss.zk:zkmax:${zkVersion}") { /*ZK EE*/
-		exclude module: "slf4j-jdk14"
-	}
-	compile "org.zkoss.zk:zuti:${zkVersion}"    /*optional enable for shadow elements support */
-//	compile "org.zkoss.zk:zhtml:${zkVersion}"   /*optional enable for xhtml component support */
-//	compile "org.zkoss.zk:zkplus:${zkVersion}"  /*optional enable for 3rd party framework integration support */
+	def withoutSlf4J = { exclude group: "org.slf4j", module: "slf4j-jdk14" }
+//	compile "org.zkoss.zk:zkbind:${zkVersion}", withoutSlf4J  { /*ZK CE*/
+//	compile "org.zkoss.zk:zkex:${zkVersion}", withoutSlf4J { /*ZK PE*/
+	compile "org.zkoss.zk:zkmax:${zkVersion}", withoutSlf4J /*ZK EE*/
+	compile "org.zkoss.zk:zuti:${zkVersion}", withoutSlf4J /*optional enable for shadow elements support ZK EE*/
+	compile "org.zkoss.zk:zkplus:${zkVersion}", withoutSlf4J /*optional enable for 3rd party framework integration support */
+	compile "org.zkoss.zk:zhtml:${zkVersion}", withoutSlf4J /*optional enable for xhtml component support */
 
 	compile "commons-io:commons-io:${commonsIoVersion}"
 }

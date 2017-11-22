@@ -1,4 +1,4 @@
-package zk.springboot;
+package zk.springboot.config;
 
 import org.zkoss.lang.Library;
 import org.zkoss.zk.ui.WebApp;
