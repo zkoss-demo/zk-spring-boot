@@ -1,10 +1,9 @@
 # ZK Spring Boot
 
-Example ZK Spring Boot project using gradle
+Starter Project for ZK with Spring Boot
 
 ## Useful Build Commands 
-
-(at first execution gradle will download itself and its dependencies)
+**NOTE:** Using the windows command line (cmd) you have to omit the "./" in front of the commands
 
 run build self executable jar (in ./build/libs)
 ```
