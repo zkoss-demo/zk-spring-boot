@@ -5,25 +5,16 @@ Starter Project for ZK with Spring Boot
 ## Useful Build Commands 
 **NOTE:** Using the windows command line (cmd) you have to omit the "./" in front of the commands
 
-build self executable jar
+build self executable jar and run
 
 with gradle-wrapper
 ```
 ./gradlew clean build
+java -jar build/libs/zk-spring-boot-0.1.0.jar
 ```
 with maven-wrapper
 ```
 ./mvnw clean package
-```
-
-run the jar
-
-for gradle
-```
-java -jar build/libs/zk-spring-boot-0.1.0.jar
-```
-for maven
-```
 java -jar target/zk-spring-boot-0.1.0.jar
 ```
 
