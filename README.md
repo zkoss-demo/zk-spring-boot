@@ -20,7 +20,7 @@ run the jar
 
 for gradle
 ```
-java -jar ./build/libs/zk-spring-boot-0.1.0.jar
+java -jar build/libs/zk-spring-boot-0.1.0.jar
 ```
 for maven
 ```
