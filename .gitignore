@@ -1,7 +1,8 @@
-/.gradle/
-/bin/
-/build/
-/out/
+.gradle/
+bin/
+build/
+out/
+target/
 
 .classpath
 .project
