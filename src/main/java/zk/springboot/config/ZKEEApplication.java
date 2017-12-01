@@ -9,6 +9,6 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Import(ZKEEConfig.class)
+@Import(ZKEEConfig.class)  /*ZK EE includes CE config*/
 public @interface ZKEEApplication {
 }
