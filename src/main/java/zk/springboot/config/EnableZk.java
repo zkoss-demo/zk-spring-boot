@@ -1,6 +1,6 @@
 package zk.springboot.config;
 
-import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ComponentScan;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,6 +9,6 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Import(ZKCEConfig.class) /*ZK CE config only*/
-public @interface ZKCEApplication {
+@ComponentScan
+public @interface EnableZk {
 }
