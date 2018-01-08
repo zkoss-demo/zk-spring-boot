@@ -23,18 +23,18 @@
 	</library-property>-->
 
 	<!-- allow changing zul pages without restart during development, workaround for http://tracker.zkoss.org/browse/ZK-3839 -->
-	<!--<library-property>-->
-		<!--<name>org.zkoss.util.resource.extendlet.checkPeriod</name>-->
-		<!--<value>5</value>-->
-		<!--&lt;!&ndash;<name>org.zkoss.zk.ZUML.cache</name>&ndash;&gt;&lt;!&ndash; suggested config for ZK-3839 once implemented &ndash;&gt;-->
-		<!--&lt;!&ndash;<value>false</value>&ndash;&gt;&lt;!&ndash; suggested config for ZK-3839 once implemented &ndash;&gt;-->
-	<!--</library-property>-->
+	<!--<library-property>
+		<name>org.zkoss.util.resource.extendlet.checkPeriod</name>
+		<value>5</value>
+		&lt;!&ndash;<name>org.zkoss.zk.ZUML.cache</name>&ndash;&gt;&lt;!&ndash; suggested config for ZK-3839 once implemented &ndash;&gt;
+		&lt;!&ndash;<value>false</value>&ndash;&gt;&lt;!&ndash; suggested config for ZK-3839 once implemented &ndash;&gt;
+	</library-property>-->
 
 	<!--https://www.zkoss.org/wiki/ZK_Configuration_Reference/zk.xml/The_Library_Properties/org.zkoss.web.classWebResource.cache-->
-	<!--<library-property>-->
-		<!--<name>org.zkoss.web.classWebResource.cache</name>-->
-		<!--<value>false</value>-->
-	<!--</library-property>-->
+	<!--<library-property>
+		<name>org.zkoss.web.classWebResource.cache</name>
+		<value>false</value>
+	</library-property>-->
 
 
 	<richlet>
