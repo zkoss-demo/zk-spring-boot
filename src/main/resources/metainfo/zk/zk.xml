@@ -22,11 +22,6 @@
 		<value>false</value>
 	</library-property>-->
 
-	<!-- allow changing zul pages without restart during development, workaround for http://tracker.zkoss.org/browse/ZK-3839 until 8.5.0 -->
-	<!--<library-property>
-		<name>org.zkoss.util.resource.extendlet.checkPeriod</name>
-		<value>5</value>
-	</library-property>-->
 	<!-- https://www.zkoss.org/wiki/ZK_Configuration_Reference/zk.xml/The_Library_Properties/org.zkoss.zk.ZUML.cache since 8.5.1 -->
 	<!--<library-property>
 		<name>org.zkoss.zk.ZUML.cache</name>
