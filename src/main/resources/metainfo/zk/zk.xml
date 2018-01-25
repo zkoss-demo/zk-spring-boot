@@ -44,9 +44,8 @@
 		<url-pattern>/richlet/test</url-pattern>
 	</richlet-mapping>
 
-	<!--enable websocket support in ZK 8.5  -->
+	<!--enable websocket support in ZK 8.5.1 (ZK-3799)  -->
 	<listener>
-		<!--<listener-class>org.zkoss.zkmax.au.websocket.WebSocketWebAppInit</listener-class>-->
-		<listener-class>zk.springboot.config.SpringBootWebSocketWebAppInit</listener-class>
+		<listener-class>org.zkoss.zkmax.au.websocket.WebSocketWebAppInit</listener-class>
 	</listener>
 </zk>
