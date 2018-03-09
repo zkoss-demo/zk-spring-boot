@@ -4,8 +4,8 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.zkoss.web.util.resource.ClassWebResource;
 import org.zkoss.zk.au.http.DHtmlUpdateServlet;
 import org.zkoss.zk.ui.http.HttpSessionListener;
@@ -15,23 +15,19 @@ import org.zkoss.zk.ui.http.WebManager;
 import javax.annotation.PreDestroy;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
 
 public class ZKCEConfig {
 	private static final String UPDATE_URI = "/zkau"; //servlet mapping for ZK's update servlet
 	private static final String RICHLET_URI = "/richlet";
-	private static final String ZUL_FORWARD_URI = UPDATE_URI + ClassWebResource.PATH_PREFIX + "/zul";
+	private static final String ZUL_VIEW_RESOLVER_PREFIX = UPDATE_URI + ClassWebResource.PATH_PREFIX + "/zul/";
+	private static final String ZUL_VIEW_RESOLVER_SUFFIX = ".zul";
 	private WebManager webManager;
 
-
-	// TODO: use ViewResolver ...
-	// forward zul files to update/resource servlet (only for jar deployment)
-	@Controller
-	public class ZulForwardController {
-		@RequestMapping(value = "/**/*.zul")
-		public String handleTestRequest(HttpServletRequest request) {
-			return "forward:" + ZUL_FORWARD_URI + request.getServletPath();
-		}
+	@Bean
+	public ViewResolver zulViewResolver() {
+		InternalResourceViewResolver resolver = new InternalResourceViewResolver(ZUL_VIEW_RESOLVER_PREFIX, ZUL_VIEW_RESOLVER_SUFFIX);
+		resolver.setOrder(InternalResourceViewResolver.LOWEST_PRECEDENCE);
+		return resolver;
 	}
 
 	// allow custom UPDATE_URI configuration (other than "/zkau")
