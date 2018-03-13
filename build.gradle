@@ -33,6 +33,8 @@ dependencies {
 //	choose either embedded tomcat or jetty
 	compile "org.springframework.boot:spring-boot-starter-jetty"
 //	compile "org.springframework.boot:spring-boot-starter-tomcat"
+//	compile "org.springframework.boot:spring-boot-starter-undertow"
+
 
 	def withoutSlf4J = { exclude group: "org.slf4j", module: "slf4j-jdk14" }
 //	compile "org.zkoss.zk:zkbind:${zkVersion}", withoutSlf4J  /*ZK CE*/

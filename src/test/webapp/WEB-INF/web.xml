@@ -15,4 +15,7 @@
 	<listener>
 		<listener-class>zk.springboot.test.config.ZatsSpringBootContextLoaderListener</listener-class>
 	</listener>
+	<listener>
+		<listener-class>org.zkoss.zk.ui.http.HttpSessionListener</listener-class>
+	</listener>
 </web-app>
