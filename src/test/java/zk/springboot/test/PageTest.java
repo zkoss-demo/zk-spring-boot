@@ -23,7 +23,7 @@ public class PageTest {
 
 	@Test
 	public void testRender() {
-		desktopAgent = client.connect("/mvvm.zul");
+		desktopAgent = client.connect("/mvvm");
 		Assert.assertNotNull(firstButton());
 		Assert.assertNotNull(secondButton());
 		Assert.assertNull(testLabel());
@@ -32,7 +32,7 @@ public class PageTest {
 
 	@Test
 	public void testButtons() {
-		desktopAgent = client.connect("/mvvm.zul");
+		desktopAgent = client.connect("/mvvm");
 		firstButton().click();
 		Assert.assertEquals("some data for page 1 (could be a more complex object)", testLabel().as(Label.class).getValue());
 		secondButton().click();

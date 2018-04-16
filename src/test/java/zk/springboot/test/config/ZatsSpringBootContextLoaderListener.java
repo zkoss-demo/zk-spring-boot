@@ -1,7 +1,8 @@
 package zk.springboot.test.config;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
+//import org.springframework.boot.web.support.SpringBootServletInitializer; /*Spring boot 1.5.x*/
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 
 import javax.servlet.ServletContext;
@@ -24,7 +25,12 @@ public class ZatsSpringBootContextLoaderListener extends ContextLoaderListener {
 
 			@Override
 			protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-				return builder.sources(sce.getServletContext().getInitParameter(CONTEXT_CONFIG_LOCATION));
+				try {
+					Class<?> configClass = Class.forName(sce.getServletContext().getInitParameter(CONTEXT_CONFIG_LOCATION));
+					return builder.sources(configClass);
+				} catch (ClassNotFoundException e) {
+					throw new IllegalArgumentException("couldn't initialize contextConfigLocation");
+				}
 			}
 		}.onStartup(sce.getServletContext());
 	}
