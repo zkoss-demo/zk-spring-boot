@@ -9,6 +9,7 @@ with gradle-wrapper
 ```
 #run Zats tests
 ./gradlew clean test
+
 #run with gradle plugin
 ./gradlew bootRun
 
@@ -21,7 +22,7 @@ with maven-wrapper
 #run Zats tests
 ./mvnw clean test
 
-#run with gradle plugin
+#run with maven plugin
 ./mvnw spring-boot:run
 
 #build self executable jar and run
