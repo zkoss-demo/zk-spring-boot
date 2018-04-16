@@ -6,6 +6,7 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.zkoss.zkmax.au.websocket.WebSocketFilter;
+import org.zkoss.zkmax.au.websocket.WebSocketWebAppInit;
 import org.zkoss.zkmax.ui.comet.CometAsyncServlet;
 
 import javax.servlet.ServletContext;
@@ -19,7 +20,7 @@ public class ZKEEConfig {
 			//required to avoid duplicate installing of the CometAsyncServlet
 			//startup sequence in spring boot is different to a normal servlet webapp
 			servletContext.setAttribute("org.zkoss.zkmax.ui.comet.async.installed", true);
-	        //servletContext.setAttribute("org.zkoss.zkmax.ws.filter.installed", true); //when FR ZK-3799 is ready (8.5.1 ?)
+	        servletContext.setAttribute("org.zkoss.zkmax.au.websocket.filter.installed", true);
 		};
 	}
 
@@ -34,8 +35,7 @@ public class ZKEEConfig {
 	@Bean
 	public FilterRegistrationBean wsFilter() {
 		FilterRegistrationBean reg = new FilterRegistrationBean(new WebSocketFilter());
-		reg.addUrlPatterns(SpringBootWebSocketWebAppInit.getWebSocketUrl() + "/*");
-		//reg.addUrlPatterns(WebSocketWebAppInit.getWebSocketUrl() + "/*"); //when FR ZK-3799 is ready (8.5.1 ?)
+		reg.addUrlPatterns(WebSocketWebAppInit.getWebSocketUrl() + "/*");
 		return reg;
 	}
 }

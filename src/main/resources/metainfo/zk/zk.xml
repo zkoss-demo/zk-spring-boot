@@ -22,10 +22,10 @@
 		<value>false</value>
 	</library-property>-->
 
-	<!-- allow changing zul pages without restart during development, workaround for http://tracker.zkoss.org/browse/ZK-3839 -->
+	<!-- https://www.zkoss.org/wiki/ZK_Configuration_Reference/zk.xml/The_Library_Properties/org.zkoss.zk.ZUML.cache since 8.5.1 -->
 	<!--<library-property>
-		<name>org.zkoss.util.resource.extendlet.checkPeriod</name>
-		<value>5</value>
+		<name>org.zkoss.zk.ZUML.cache</name>
+		<value>false</value>
 	</library-property>-->
 
 	<!--https://www.zkoss.org/wiki/ZK_Configuration_Reference/zk.xml/The_Library_Properties/org.zkoss.web.classWebResource.cache-->
@@ -44,9 +44,8 @@
 		<url-pattern>/richlet/test</url-pattern>
 	</richlet-mapping>
 
-	<!--enable websocket support in ZK 8.5  -->
+	<!--enable websocket support in ZK 8.5.1 (ZK-3799)  -->
 	<listener>
-		<!--<listener-class>org.zkoss.zkmax.au.websocket.WebSocketWebAppInit</listener-class>-->
-		<listener-class>zk.springboot.config.SpringBootWebSocketWebAppInit</listener-class>
+		<listener-class>org.zkoss.zkmax.au.websocket.WebSocketWebAppInit</listener-class>
 	</listener>
 </zk>
