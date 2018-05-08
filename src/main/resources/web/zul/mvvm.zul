@@ -12,7 +12,7 @@
 			<button label="sub page 2" onClick="@command('navigate', page='page2')"/>
 		</div>
 		<!-- in ZK CE version you can use the include component -->
-		<!--<include pageModel="@load(vm.currentPage) src="@load(vm.currentPage.uri)""/>-->
+		<!--<include pageModel="@load(vm.currentPage)" src="@load(vm.currentPage.uri)"/>-->
 		<apply templateURI="@load(vm.currentPage.uri)" pageModel="@load(vm.currentPage)"/>
 	</window>
 </zk>
