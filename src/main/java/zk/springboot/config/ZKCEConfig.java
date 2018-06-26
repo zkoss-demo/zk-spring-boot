@@ -61,7 +61,6 @@ public class ZKCEConfig {
 		return new ServletRegistrationBean(new DHtmlUpdateServlet(), UPDATE_URI + "/*");
 	}
 
-
 	/**
 	 * With Zats the listener needs to be configured in web.xml.(custom update URI isn't supported by Zats anyway).
 	 * Zats runs with its own embedded Jetty.

@@ -1,5 +1,5 @@
 <zk>
-	<window title="Main Window" viewModel="@id('vm') @init('zk.springboot.viewmodel.MainViewModel')">
+	<window title="${labels.mvvm.title}" viewModel="@id('vm') @init('zk.springboot.viewmodel.MainViewModel')">
 		Current Time (from Spring Service):
 		<label value="@load(vm.currentTime)"/>
 		<a iconSclass="z-icon-refresh" onClick="@command('updateTime')"/>
