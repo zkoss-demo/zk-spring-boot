@@ -19,13 +19,13 @@ public class MainViewModel {
 	@WireVariable
 	private TestService testService;
 
-	Map<String, PageModel> pages = new HashMap<>();
-	private PageModel currentPage;
+	Map<String, PageModel<String>> pages = new HashMap<>();
+	private PageModel<String> currentPage;
 
 	@Init
 	public void init() {
-		pages.put("page1", new PageModel("~./zul/mvvm-page1.zul", "some data for page 1 (could be a more complex object)"));
-		pages.put("page2", new PageModel("~./zul/mvvm-page2.zul", "different data for page 2"));
+		pages.put("page1", new PageModel<>("~./zul/mvvm-page1.zul", "some data for page 1 (could be a more complex object)"));
+		pages.put("page2", new PageModel<>("~./zul/mvvm-page2.zul", "different data for page 2"));
 	}
 
 	@Command

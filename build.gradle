@@ -29,7 +29,7 @@ targetCompatibility = '1.8'
 // In this section you declare the dependencies for your production and test code
 dependencies {
 
-	compile ("org.springframework.boot:spring-boot-starter-web") {
+	compile ("org.zkoss.zkspringboot:zkspringboot-starter:${zkspringbootVersion}") {
 		exclude module: "spring-boot-starter-tomcat"
 	}
 //	choose either embedded tomcat/jetty/undertow
@@ -47,6 +47,7 @@ dependencies {
 
 	compile "commons-io:commons-io:${commonsIoVersion}"
 
-	testCompile "org.zkoss.zats:zats-mimic-ext7:${zatsVersion}"
+	testCompile "org.zkoss.zkspringboot:zkspringboot-zats:${zkspringbootVersion}"
+//	testCompile "org.zkoss.zats:zats-mimic-ext7:${zatsVersion}"
 	testCompile "junit:junit:${junitVersion}"
 }
