@@ -1,4 +1,4 @@
-** This project is deprecated ** For ZK-Springboot support please use the zkspringboot-starter project:
+**This project is deprecated** For ZK-Springboot support please use the zkspringboot-starter project:
 https://github.com/zkoss/zkspringboot
 
 # ZK Spring Boot (Deprecated)
